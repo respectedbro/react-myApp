@@ -1,12 +1,15 @@
 import './App.css'
-import UserCard from './userCard.jsx';
+
 import Counter from './counter.jsx';
+import GetPost from './getPost.jsx';
 
 function App() {
 
   return (
     <>
+        <GetPost/>
       <Counter/>
+
     </>
   )
 }

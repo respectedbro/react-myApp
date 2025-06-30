@@ -1,19 +1,21 @@
-import {useState} from 'react'
+import {useState} from 'react';
 
+//1
 function Counter() {
-    const [count, setCount] = useState(10)
+    const [count, setCount] = useState(10);
     const [showError, setShowError] = useState(false);
 
     function increase() {
         setCount((prevState) => prevState + 1);
+        setShowError(false);
     }
 
     function decrease() {
-        setCount((prevState) => prevState - 1)
-
-        if (count <= 0) {
-            setShowError(true)
-            cou
+        if (count > 0) {
+            setCount((prevState) => prevState - 1);
+            setShowError(false);
+        } else if (count <= 0) {
+            setShowError(true);
         }
     }
 
@@ -22,12 +24,13 @@ function Counter() {
         <p>{count}</p>
         <button onClick={decrease}>Уменьшить</button>
         {showError && (
-            <p style={{ color: 'red' }}>
+            <p style={{color: 'red'}}>
                 Пожалуйста, измените количество, оно не может быть равно 0
             </p>
         )}
 
-    </>
+    </>;
 }
 
-export default Counter
+
+export default Counter;
